@@ -1,5 +1,5 @@
 import { HomeFilled, ShoppingCartOutlined } from "@ant-design/icons";
-import PayPal from "../PayPal"
+import PayPal from "../Checkout"
 import {
   Badge,
   Button,
