@@ -1,4 +1,5 @@
 import { HomeFilled, ShoppingCartOutlined } from "@ant-design/icons";
+import PayPal from "../PayPal"
 import {
   Badge,
   Button,
@@ -175,6 +176,8 @@ function AppCart() {
             return <span>Total: ${total}</span>;
           }}
         />
+        <PayPal />
+        {/* 
         <Button
           onClick={() => {
             setCheckoutDrawerOpen(true);
@@ -183,6 +186,7 @@ function AppCart() {
         >
           Checkout Your Cart
         </Button>
+        */}
       </Drawer>
       <Drawer
         open={checkoutDrawerOpen}
