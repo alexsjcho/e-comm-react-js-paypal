@@ -84,7 +84,7 @@ function AppHeader() {
           },
         ]}
       />
-      <Typography.Title>Aamir Store</Typography.Title>
+      <Typography.Title>PayPal Demo</Typography.Title>
       <AppCart />
     </div>
   );
