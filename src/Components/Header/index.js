@@ -173,7 +173,7 @@ function AppCart() {
             const total = data.reduce((pre, current) => {
               return pre + current.total;
             }, 0);
-            return <span>Total: ${total}</span>;
+            return <span>Total: ${total.toFixed(2)}</span>;
           }}
         />
         <PayPal />

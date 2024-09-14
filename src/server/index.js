@@ -2,6 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 import "dotenv/config";
 import path from "path";
+import { ConsoleSqlOutlined } from "@ant-design/icons";
 
 const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PORT = 8888 } = process.env;
 const base = "https://api-m.sandbox.paypal.com";
@@ -51,6 +52,9 @@ const createOrder = async (cart) => {
     cart,
   );
 
+  const totalAmount = cart.reduce((totalValue, product) => totalValue + product.total, 0);
+  console.log('totalAmount: ' + totalAmount);
+
   const accessToken = await generateAccessToken();
   const url = `${base}/v2/checkout/orders`;
   const payload = {
@@ -59,7 +63,7 @@ const createOrder = async (cart) => {
       {
         amount: {
           currency_code: "USD",
-          value: "100.00",
+          value: totalAmount.toFixed(2),
         },
       },
     ],
