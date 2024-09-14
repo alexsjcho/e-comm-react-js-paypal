@@ -65,6 +65,30 @@ const createOrder = async (cart) => {
           currency_code: "USD",
           value: totalAmount.toFixed(2),
         },
+        shipping: {
+          options: [
+            {
+              id: "SHIP_123",
+              label: "Free Shipping",
+              type: "SHIPPING",
+              selected: true,
+              amount: {
+                  value: "3.00",
+                  currency_code: "USD"
+              }
+            },
+            {
+              id: "SHIP_456",
+              label: "Pick up in Store",
+              type: "PICKUP",
+              selected: false,
+              amount: {
+                  value: "0.00",
+                  currency_code: "USD"
+              }
+            }
+          ]
+        }
       },
     ],
   };
